@@ -1,1 +1,1 @@
-go build -o build/restapi cmd/restapi/main.go
+go build -o build/restapi.exe cmd/restapi/main.go

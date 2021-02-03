@@ -56,3 +56,12 @@ func (h ProductHandler) updateProduct(c *fiber.Ctx) error {
 
 	return nil
 }
+
+func (h ProductHandler) deleteProduct(c *fiber.Ctx) error {
+	productIDString := c.Params(id)
+	productID := stdconv.ParseInt(productIDString)
+
+	h.service.DeleteProduct(productID)
+
+	return nil
+}

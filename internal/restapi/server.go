@@ -19,6 +19,7 @@ func Run() {
 	app.Get("/products", productHandler.getProducts)
 	app.Get("/products/:id", productHandler.getProductByID)
 	app.Put("/products/:id", productHandler.updateProduct)
+	app.Delete("/products/:id", productHandler.deleteProduct)
 
 	app.Listen(":3000")
 }

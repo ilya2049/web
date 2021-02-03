@@ -37,3 +37,14 @@ func (s *Service) UpdateProduct(id int, newProduct Product) {
 		}
 	}
 }
+
+func (s *Service) DeleteProduct(id int) {
+	for i := 0; i < len(s.products); i++ {
+		if s.products[i].ID == id {
+			s.products[i] = s.products[len(s.products)-1]
+			s.products[len(s.products)-1] = Product{}
+			s.products = s.products[:len(s.products)-1]
+			break
+		}
+	}
+}
