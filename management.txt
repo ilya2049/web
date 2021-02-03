@@ -1,1 +1,5 @@
 go build -o build/restapi.exe cmd/restapi/main.go
+
+git add .
+git commit //i//comment//Esc//://wq
+git push origin main
