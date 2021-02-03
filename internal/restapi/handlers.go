@@ -35,10 +35,24 @@ func (h ProductHandler) getProducts(c *fiber.Ctx) error {
 }
 
 func (h ProductHandler) getProductByID(c *fiber.Ctx) error {
-	productIDString := c.Params("id")
+	productIDString := c.Params(id)
 	productID := stdconv.ParseInt(productIDString)
 
 	product := h.service.GetProductByID(productID)
 
 	return c.JSON(product)
+}
+
+func (h ProductHandler) updateProduct(c *fiber.Ctx) error {
+	productIDString := c.Params(id)
+	productID := stdconv.ParseInt(productIDString)
+
+	product := product.Product{}
+	if err := c.BodyParser(&product); err != nil {
+		return err
+	}
+
+	h.service.UpdateProduct(productID, product)
+
+	return nil
 }

@@ -27,3 +27,13 @@ func (s Service) GetProductByID(id int) Product {
 
 	return Product{}
 }
+
+func (s *Service) UpdateProduct(id int, newProduct Product) {
+	for i := 0; i < len(s.products); i++ {
+		if s.products[i].ID == id {
+			s.products[i].Name = newProduct.Name
+			s.products[i].Price = newProduct.Price
+			break
+		}
+	}
+}

@@ -18,6 +18,7 @@ func Run() {
 	app.Post("/products", productHandler.addProduct)
 	app.Get("/products", productHandler.getProducts)
 	app.Get("/products/:id", productHandler.getProductByID)
+	app.Put("/products/:id", productHandler.updateProduct)
 
 	app.Listen(":3000")
 }
