@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "port": 8123,
+            "previewLimit": 50,
+            "driver": "ClickHouse",
+            "name": "bidder",
+            "server": "135.181.78.114",
+            "database": "default",
+            "username": "bidder",
+            "password": "7GdN4yFC9GTjgnECJvq8"
+        }
+    ]
+}
